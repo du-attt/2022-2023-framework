@@ -1,0 +1,28 @@
+﻿@{
+
+}
+@model ChuyenBay
+<form method="post" action="/Cau3/ThemHanhKhachVaoChuyenBay">
+    <div>
+        <input type="text" name="MaCH" value="@Model.MaCH" readonly style="display:none" /><br />
+        Chuyến <input type="text" name="TenCH" value="@Model.TenCH" readonly /><br />
+        Điểm đi <input type="text" name="DDI" value="@Model.DDi" readonly /><br />
+        Điểm đến <input type="text" name="DDen" value="@Model.DDen" readonly /><br />
+        Chỗ Vip <label>@Model.VIP</label><br />
+        Mã hành khách  <input type="text" name="MaHK" /><br />
+        Loại ghế 
+        <select name="LoaiGhe">
+            <option value="Thuong">Thường</option>
+            <option value="Vip">Vip</option>
+        </select>
+    </div>
+    <div>
+        Ngày bay <input type="text" name="Ngay" value="@Model.Ngay" readonly /><br />
+        Giờ đi <input type="text" name="GBay" value="@Model.GBay" readonly /><br />
+        Giờ đến <input type="text" name="GDen" value="@Model.GDen" readonly /><br />
+        Chỗ thường <label>@Model.Thuong</label><br />
+        Tên hành khách <input type="text" name="HoTen" /><br />
+        Số ghế <input type="text" name="SoGhe" /><br />
+    </div>
+    <input type="submit" name="btn_themhanhkhach" value="Thêm hành khách" />
+</form>

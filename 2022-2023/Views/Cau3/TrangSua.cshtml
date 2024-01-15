@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Cập nhật";
+}
+<h3>Cập nhật thông tin hành khách</h3>
+<form action="/Cau3/SuaHanhKhach" method="post">
+    <input type="text" name="MaCH" value="@ViewBag.MaCH" style="display:none" /><br />
+    Mã hành khách <input type="text" name="MaHK" value="@ViewBag.MaHK" readonly /><br />
+    Tên hành khách <input type="text" name="HoTen" value="@ViewBag.HoTen" readonly /><br />
+    Loại ghế
+    <select name="LoaiGhe">
+        <option value="Thuong">Thường</option>
+        <option value="Vip">Vip</option>
+    </select>
+    Số ghê <input type="text" name="SoGhe" /><br />
+    <input type="submit" name="btn_capnhat" value="Cập nhật" />
+</form>

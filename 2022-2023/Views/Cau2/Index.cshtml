@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Liệt kê chuyến bay";
+}
+<h3>Xem thông tin chuyến bay</h3>
+<form action="/Cau2/LietKeChuyenBay" method="get">
+    Mã chuyến bay <input type="text" name="MaCH" /><br />  @*Lưu ý: name="MaCH" phải giống với trong MaCH trong model*@
+    <input type="submit" name ="btn_LietKe" value="Liệt kê"/>
+</form>
+
+

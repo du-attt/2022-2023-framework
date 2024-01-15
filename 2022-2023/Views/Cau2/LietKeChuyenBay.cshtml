@@ -1,0 +1,46 @@
+﻿@{
+    
+}
+@model (ChuyenBay, List<object>)
+<form method="post" action="/Cau3/ThemHanhKhachVaoChuyenBay">
+    <div>
+        <input type="text" name="MaCH" value="@Model.Item1.MaCH" readonly style="display:none" /><br />
+        Chuyến <input type="text" name="TenCH" value="@Model.Item1.TenCH" readonly/><br />
+        Điểm đi <input type="text" name="DDI" value="@Model.Item1.DDi" readonly /><br />
+        Điểm đến <input type="text" name="DDen" value="@Model.Item1.DDen" readonly /><br />
+        Chỗ Vip <label>@Model.Item1.VIP</label><br />
+    </div>
+    <div>
+        Ngày bay <input type="text" name="Ngay" value="@Model.Item1.Ngay" readonly /><br />
+        Giờ đi <input type="text" name="GBay" value="@Model.Item1.GBay" readonly /><br />
+        Giờ đến <input type="text" name="GDen" value="@Model.Item1.GDen" readonly /><br />
+        Chỗ thường <label>@Model.Item1.Thuong</label><br />
+    </div>
+    <input type="submit" name="themhanhkhach" value="Thêm hành khách" />
+</form>
+<div class="ct_chuyenbay"></div>
+<table border="1">
+
+        <tr>
+            <th>Họ tên hành khách</th>
+            <th>Điện thoại</th>
+            <th>Loại ghế</th>
+            <th>Số ghế</th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach (var hk in @Model.Item2)
+        {
+            var hanhKhach = (dynamic)hk;
+            <tr>
+                <td>@hanhKhach.HoTen</td>
+                <td>@hanhKhach.DienThoai</td>
+                <td>@hanhKhach.LoaiGhe</td>
+                <td>@hanhKhach.SoGhe</td>
+            <td>                 
+                <a href="/Cau3/XoaHanhKhach?mach=@Model.Item1.MaCH&&mahk=@hanhKhach.MaHK">Xóa</a>
+                <a href="/Cau3/TrangSua?hoten=@hanhKhach.HoTen&&mahk=@hanhKhach.MaHK&&mach=@Model.Item1.MaCH">Sửa</a>
+            </td>
+        </tr>
+        }
+</table>
